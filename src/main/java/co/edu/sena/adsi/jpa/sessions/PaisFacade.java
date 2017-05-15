@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class PaisFacade extends AbstractFacade<Pais> {
 
-    @PersistenceContext(unitName = "co.edu.sena.adsi_AdsiCompleto2017_war_1.0-SNAPSHOTPU")
+    @PersistenceContext(unitName = "co.edu.sena.adsi_Adsi1199561_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
     @Override
