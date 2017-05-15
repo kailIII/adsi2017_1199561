@@ -31,7 +31,7 @@ public class UsuarioREST {
      * @return lista de usuarios
      */
     @GET
-    //@RolesAllowed({"ADMIN"})
+    @RolesAllowed({"ADMIN"})
     public List<Usuario> findAll(){
         return usuarioEJB.findAll();
     }
