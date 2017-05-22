@@ -11,6 +11,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -27,11 +28,16 @@ public class CiudadREST {
     
     /**
      * Obtiene todas las ciudades
+     * @param nombre
+     * @param idDepartamento
      * @return lista de ciudades
      */
     @GET
-    public List<Ciudad> findAll(){
-        return ciudadEJB.findAll();
+    public List<Ciudad> findAll(
+            @QueryParam("nombre") String nombre,
+            @QueryParam("idDepartamento") Integer idDepartamento){
+        
+        return ciudadEJB.findAutocomplete(nombre, idDepartamento);
     }
     
     /**
