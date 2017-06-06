@@ -2,6 +2,7 @@ package co.edu.sena.adsi.rest.services;
 
 import co.edu.sena.adsi.jpa.entities.Usuario;
 import co.edu.sena.adsi.jpa.sessions.UsuarioFacade;
+import co.edu.sena.adsi.rest.utils.SendEmail;
 import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
@@ -68,6 +69,8 @@ public class UsuarioREST {
     @POST
     public void create(Usuario usuario){
         usuarioEJB.create(usuario);
+        SendEmail email = new SendEmail();
+        email.emailRegistroUsuario();
     }
     
     /**
